@@ -1,0 +1,62 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "show_edit_predictions": false,
+  "features": {
+    "edit_prediction_provider": "copilot"
+  },
+  "auto_update_extensions": {
+    "html": false
+  },
+  "vim_mode": true,
+  "relative_line_numbers": true,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "autosave": {
+    "after_delay": { "milliseconds": 500 }
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 15.0,
+  "buffer_font_weight": 500,
+  "ui_font_weight": 501,
+  "ui_font_family": "Noto Sans",
+  "theme": {
+    "mode": "system",
+    "light": "Andromeda",
+    "dark": "Catppuccin Frappé - No Italics"
+  },
+  "tabs": {
+    "file_icons": true,
+    "git_status": true
+  },
+  "languages": {
+    "C": {
+      "show_edit_predictions": false
+    },
+    "HTML": {
+      "tab_size": 2,
+      "preferred_line_length": 120
+    },
+    "Java": {
+      "show_edit_predictions": false,
+      "preferred_line_length": 110
+    },
+    "TSX": {
+      "show_edit_predictions": true,
+      "code_actions_on_format": {
+        "source.organizeImports": true
+      }
+    }
+  },
+  "file_types": {
+    "C": ["*.h"]
+  }
+}

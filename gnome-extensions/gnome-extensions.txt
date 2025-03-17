@@ -1,0 +1,10 @@
+dash-to-dock@micxgx.gmail.com
+todo.txt@bart.libert.gmail.com
+dash-to-panel@jderose9.github.com
+launch-new-instance@gnome-shell-extensions.gcampax.github.com
+logomenu@aryan_k
+user-theme@gnome-shell-extensions.gcampax.github.com
+blur-my-shell@aunetx
+clipboard-indicator@tudmotu.com
+Vitals@CoreCoding.com
+background-logo@fedorahosted.org
