@@ -1,0 +1,4 @@
+[custom1]
+binding='<Shift><Control>Escape'
+command='systemctl suspend'
+name='Suspend'
