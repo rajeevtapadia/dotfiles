@@ -26,5 +26,3 @@ if [[ $1 == 'restore' ]]; then
 fi
 
 echo "parameter 0: [backup|restore]"
-@rajeevtapadia
-Comment
