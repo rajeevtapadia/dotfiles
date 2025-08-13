@@ -15,7 +15,7 @@
     "context": "Terminal",
     "bindings": {
       "ctrl-shift-t": "workspace::NewTerminal",
-      "ctrl-t": "workspace::NewTerminal",
+      "ctrl-t": "workspace::NewTerminal"
       // "ctrl-w": "pane::CloseActiveItem",
     }
   },
@@ -25,7 +25,7 @@
     "bindings": {
       "ctrl-b": "workspace::ToggleLeftDock",
       "ctrl-e": "project_panel::ToggleFocus",
-      "ctrl-`": "terminal_panel::ToggleFocus",
+      "ctrl-`": "terminal_panel::ToggleFocus"
     }
   }
 ]

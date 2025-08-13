@@ -9,21 +9,20 @@
 # gnome extension list
 
 set -e
-set -x
 
 # zsh
-cat ~/.zshrc > ./zsh/.zshrc-$(date +"%Y-%m-%dT%H:%M")
-cat ~/.zsh_history > ./zsh/.zsh_history-$(date +"%Y-%m-%dT%H:%M")
+cat ~/.zshrc > ./zsh/.zshrc
+cat ~/.zsh_history > ./zsh/.zsh_history
 
 # zed
-cat ~/.config/zed/settings.json > ./zed/settings-$(date +"%Y-%m-%dT%H:%M").json
-cat ~/.config/zed/keymap.json > ./zed/keymap-$(date +"%Y-%m-%dT%H:%M").json
-cat ~/.config/zed/tasks.json > ./zed/tasks-$(date +"%Y-%m-%dT%H:%M").json
+cat ~/.config/zed/settings.json > ./zed/settings.json
+cat ~/.config/zed/keymap.json > ./zed/keymap.json
+cat ~/.config/zed/tasks.json > ./zed/tasks.json
 
 # tmux
 ./tmux/tmux-config.sh backup
 
 # gnome extension list
 cd gnome-extensions
-./backup-extensions backup
+./backup-extensions.sh backup
 cd ..

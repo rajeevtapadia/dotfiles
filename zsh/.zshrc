@@ -110,17 +110,35 @@ alias gitl="git log --oneline"
 alias nrd="npm run dev"
 alias nrt="npx jest"
 alias zed="zed-editor"
+alias cht-core="cd ~/cht-core"
 
 PROMPT='%F{green}%T%f %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$ '
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /home/rajeevt/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /home/rajeevt/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-export JAVA_HOME=/home/rajeevt/.jdks/openjdk-22.0.2
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
 export PATH=$PATH:$HOME/.local/zed.app/libexec:
 export PATH=$PATH:$HOME/.jdks/openjdk-22.0.2/bin:
 export PATH=$PATH:/opt/clion-2024.3.2/bin:
+export PATH=$PATH:/home/rajeevt/.local/zulip/:
 export DRI_PRIME=1
+
+export COUCH_NODE_NAME=nonode@nohost
+export COUCH_URL=http://medic:password@localhost:5984/medic
+export COUCHDB_USER=medic 
+export COUCHDB_PASSWORD=password
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export CC="ccache gcc"
+export HOSTCC="ccache gcc"
+
+# Created by `pipx` on 2025-08-10 14:52:52
+export PATH="$PATH:/home/rajeevt/.local/bin"
 

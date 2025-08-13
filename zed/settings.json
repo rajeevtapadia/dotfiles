@@ -26,12 +26,13 @@
   "ui_font_size": 16,
   "buffer_font_size": 15.0,
   "buffer_font_weight": 500,
+  // "buffer_font_weight": 500,
   "ui_font_weight": 501,
   "ui_font_family": "Noto Sans",
   "theme": {
     "mode": "system",
     "light": "Andromeda",
-    "dark": "Catppuccin Frappé - No Italics"
+    "dark": "Catppuccin Mocha - No Italics"
   },
   "tabs": {
     "file_icons": true,
@@ -57,6 +58,16 @@
     }
   },
   "file_types": {
-    "C": ["*.h"]
+    "C": ["*.h"],
+    "HTML": ["*.jsp", "*.hbs"]
+  },
+  "lsp": {
+    "vtsls": {
+      "settings": {
+        "tsserver": {
+          "maxTsServerMemory": 8092
+        }
+      }
+    }
   }
 }

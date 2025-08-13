@@ -50,7 +50,20 @@
     "label": "Build and Run C File",
     "command": "gcc",
     "args": [
-      "\"$ZED_FILE\" -g -lm -Wall && \"./a.out\""
+      "\"$ZED_FILE\" -ggdb -lm -Wall && \"./a.out\""
+    ],
+    // "use_new_terminal": true,
+    "allow_concurrent_runs": false,
+    "reveal": "always",
+    "reveal_target": "dock",
+    "hide": "never",
+    "shell": "system"
+  },
+  {
+    "label": "Build and Run C++ File",
+    "command": "g++",
+    "args": [
+      "\"$ZED_FILE\" -ggdb -Wall -lssl -lcrypto && \"./a.out\""
     ],
     // "use_new_terminal": true,
     "allow_concurrent_runs": false,
