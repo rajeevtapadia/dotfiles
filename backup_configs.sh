@@ -5,7 +5,8 @@
 #
 # zsh configs: .zshrc, .zsh_history
 # zed configs: settings, keymap, tasks
-#
+# tmux config
+# gnome extension list
 
 set -e
 set -x
@@ -18,6 +19,9 @@ cat ~/.zsh_history > ./zsh/.zsh_history-$(date +"%Y-%m-%dT%H:%M")
 cat ~/.config/zed/settings.json > ./zed/settings-$(date +"%Y-%m-%dT%H:%M").json
 cat ~/.config/zed/keymap.json > ./zed/keymap-$(date +"%Y-%m-%dT%H:%M").json
 cat ~/.config/zed/tasks.json > ./zed/tasks-$(date +"%Y-%m-%dT%H:%M").json
+
+# tmux
+./tmux/tmux-config.sh backup
 
 # gnome extension list
 gnome-extensions list --enabled > ./gnome-extensions/gnome-extensions.txt
