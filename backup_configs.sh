@@ -24,4 +24,6 @@ cat ~/.config/zed/tasks.json > ./zed/tasks-$(date +"%Y-%m-%dT%H:%M").json
 ./tmux/tmux-config.sh backup
 
 # gnome extension list
-gnome-extensions list --enabled > ./gnome-extensions/gnome-extensions.txt
+cd gnome-extensions
+./backup-extensions backup
+cd ..
