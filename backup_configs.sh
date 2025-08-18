@@ -26,3 +26,7 @@ cat ~/.config/zed/tasks.json > ./zed/tasks.json
 cd gnome-extensions
 ./backup-extensions.sh backup
 cd ..
+
+# nvim
+./neovim/nvim_backup.sh backup
+
