@@ -103,14 +103,14 @@ export EDITOR='nvim'
 alias vim="nvim"
 alias kc="kubectl"
 alias mk="minikube"
-alias gitc="git commit -m"
+alias gitc="git commit -s"
 alias gits="git status"
 alias gitp="git push"
 alias gitl="git log --oneline"
 alias nrd="npm run dev"
 alias nrt="npx jest"
 alias zed="zed-editor"
-alias cht-core="cd ~/cht-core"
+alias attach="tmux attach -t"
 
 PROMPT='%F{green}%T%f %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$ '
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -122,14 +122,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
 export PATH=$PATH:$HOME/.local/zed.app/libexec:
 export PATH=$PATH:$HOME/.jdks/openjdk-22.0.2/bin:
-export PATH=$PATH:/opt/clion-2024.3.2/bin:
-export PATH=$PATH:/home/rajeevt/.local/zulip/:
 export DRI_PRIME=1
-
-export COUCH_NODE_NAME=nonode@nohost
-export COUCH_URL=http://medic:password@localhost:5984/medic
-export COUCHDB_USER=medic 
-export COUCHDB_PASSWORD=password
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

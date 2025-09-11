@@ -8,6 +8,7 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
+vim.o.smartcase = true
 vim.opt.signcolumn = "yes"
 
 -- Highlight search
@@ -15,8 +16,8 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 vim.g.mapleader = " "
-vim.keymap.set('n', '<leader>o', ':update<CR> :source<CR>')
 vim.keymap.set('n', '<leader>w', ':write<CR>')
+vim.keymap.set('i', '<C-H>', '<C-W>', { noremap = true })
 
 --[[
 -- pack available from neovim 0.12

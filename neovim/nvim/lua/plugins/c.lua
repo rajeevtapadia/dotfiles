@@ -1,26 +1,36 @@
 return {
     -- LSP for C/C++
-    {
+ {
         "neovim/nvim-lspconfig",
         config = function()
             local lspconfig = require("lspconfig")
 
             -- Set up clangd for C/C++
-            lspconfig.clangd.setup({})
-
-            -- Keymaps when LSP attaches
-            vim.api.nvim_create_autocmd('LspAttach', {
-                callback = function(ev)
-                    local opts = { buffer = ev.buf }
-                    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-                    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-                    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-                    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-             -- Autoformat C/C++ files with Alt+Shift+F
+            lspconfig.clangd.setup({
+                cmd = { "clangd", "--enable-config", "--background-index", "--suggest-missing-includes" },  -- Enable clangd settings
+                settings = {
+                    clangd = {
+                        -- Enable diagnostics for clangd
+                        diagnostics = {
+                            enable = true,  -- Enable diagnostics
+                            showUnused = true,  -- Show warnings for unused variables
+                            enableExperimental = true,  -- Enable experimental diagnostics (optional)
+                        },
+                    },
+                },
+                on_attach = function(client, bufnr)
+                    -- Keymaps when LSP attaches
+                    local opts = { buffer = bufnr }
+                    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+                    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+                    vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+                    vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+                    
+                    -- Autoformat C/C++ files with Alt+Shift+F
                     vim.keymap.set('n', '<M-F>', function()
                         vim.lsp.buf.format({ async = true })
                     end, opts)
-                end
+                end,
             })
         end
     },

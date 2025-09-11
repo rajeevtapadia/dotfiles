@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Run this script from root dir"
+
 case "$1" in
     backup)
         echo "Backing up tmux config..."

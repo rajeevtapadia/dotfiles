@@ -7,6 +7,6 @@ return {
     -- VSCode-like Ctrl+P
     vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = "Find files" })
     -- Optional: live grep like Ctrl+Shift+F
-    vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Live grep" })
+    vim.keymap.set("n", "g/", builtin.live_grep, { desc = "Live grep" })
   end
 }
