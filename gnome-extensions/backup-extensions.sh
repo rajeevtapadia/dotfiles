@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BACKUP_FILE="./extension-list.json"
+BACKUP_FILE="./gnome-extensions/extension-list.json"
 
 usage() {
     echo "Usage: $0 backup|restore"
@@ -35,8 +35,11 @@ elif [[ "$mode" == "restore" ]]; then
         exit 1
     fi
 
+    sudo dnf install pipx
+    pipx install gnome-extensions-cli --system-site-packages
+
     echo "Restoring GNOME extensions using Python..."
-    ./install-extensions.py "$BACKUP_FILE"
+    ./gnome-extensions/install-extensions.py "$BACKUP_FILE"
     echo "Restore complete."
 
 else

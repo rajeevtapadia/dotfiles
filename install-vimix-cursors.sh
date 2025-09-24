@@ -1,9 +1,5 @@
 #!/usr/bin/bash
 
-cd ~/Downloads
-
-git clone git@github.com:vinceliuice/Vimix-cursors.git
-
-cd Vimix-cursors
-
-sudo ./install.sh
+echo "Cloning Vimix-cursors in ~/Downloads"
+git clone https://github.com/vinceliuice/Vimix-cursors.git ~/Downloads
+sudo ~/Downloads/install.sh

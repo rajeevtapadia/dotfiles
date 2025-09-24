@@ -1,0 +1,30 @@
+Order of installation
+
+1. zsh installation and restore
+./install-zsh.sh
+./zsh/backup-zsh.sh restore
+A logout is required after running this script.
+
+2. install-essentials.sh
+./install-essentials.sh
+Run this with superuser privilate
+
+3. install zed
+./install-zed.sh
+./zed/backup-zed.sh restore
+
+4. restore nvim config
+./neovim/nvim_backup.sh restore
+
+5. install gnome extensions
+./gnome-extensions/backup-extensions.sh restore
+
+6. install whitesur theme
+./install-whitesur-theme.sh
+It needs to be activated in tweaks
+
+Scripts that don't require any particular order
+./install-vimix-cursors.sh
+./gnome-keybindings/keybindings.sh
+./tmux/tmux-config-backup.sh restore
+./swap-esc-caps.sh

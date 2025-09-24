@@ -9,9 +9,9 @@ set -e
 mkdir -p gnome3-keybind-backup
 
 if [[ $1 == 'backup' ]]; then
-  dconf dump '/org/gnome/desktop/wm/keybindings/' > gnome3-keybind-backup/keybindings.dconf
-  dconf dump '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/' > gnome3-keybind-backup/custom-values.dconf
-  dconf read '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings' > gnome3-keybind-backup/custom-keys.dconf
+  dconf dump '/org/gnome/desktop/wm/keybindings/' > ./gnome-keybindings/gnome3-keybind-backup/keybindings.dconf
+  dconf dump '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/' > ./gnome-keybindings/gnome3-keybind-backup/custom-values.dconf
+  dconf read '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings' > ./gnome-keybindings/gnome3-keybind-backup/custom-keys.dconf
   echo "backup done"
   exit 0
 fi

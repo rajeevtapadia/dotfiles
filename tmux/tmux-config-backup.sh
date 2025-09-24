@@ -9,6 +9,7 @@ case "$1" in
         echo "Backup saved"
         ;;
     restore)
+        git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
         cat tmux/.tmux.conf > ~/.tmux.conf
         echo "tmux config restored"
         ;;
