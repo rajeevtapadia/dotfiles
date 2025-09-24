@@ -111,6 +111,7 @@ alias nrd="npm run dev"
 alias nrt="npx jest"
 alias zed="zed-editor"
 alias attach="tmux attach -t"
+alias xsel="xsel --clipboard"
 
 PROMPT='%F{green}%T%f %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$ '
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
