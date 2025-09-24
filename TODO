@@ -1,0 +1,22 @@
+add ghostty
+dnf copr enable scottames/ghostty
+dnf install ghostty
+
+add fzf
+
+install pipx before extensino script
+sudo dnf install pipx
+pipx install gnome-extensions-cli --system-site-packages
+
+tmux script fucked
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+logout after zsh install
+
+dont run zsh plugins install as sudo
+
+/etc/dnf/dnf.conf
+fastestmirror=True
+max_parallel_downloads=10
+defaultyes=True
+keepcache=True
