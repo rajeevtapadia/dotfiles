@@ -16,10 +16,13 @@ Run this with superuser privilate
 4. restore nvim config
 ./neovim/nvim_backup.sh restore
 
-5. install gnome extensions
+5. ghostty
+./ghostty/ghostty-backup.sh restore
+
+6. install gnome extensions
 ./gnome-extensions/backup-extensions.sh restore
 
-6. install whitesur theme
+7. install whitesur theme
 ./install-whitesur-theme.sh
 It needs to be activated in tweaks
 

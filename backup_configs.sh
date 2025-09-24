@@ -6,6 +6,7 @@
 # zsh configs: .zshrc, .zsh_history
 # zed configs: settings, keymap, tasks
 # tmux config
+# ghostty config
 # gnome extension list
 # nvim config
 # gnome keybindings
@@ -20,6 +21,9 @@ set -e
 
 # tmux
 ./tmux/tmux-config-backup.sh backup
+
+# ghostty
+./ghostty/ghostty-backup.sh backup
 
 # gnome extension list
 ./gnome-extensions/backup-extensions.sh backup
