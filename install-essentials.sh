@@ -39,3 +39,5 @@ ghostty \
 fzf \
 pipx \
 akmod-nvidia -y
+
+./install-docker-fedora.sh
