@@ -2,6 +2,7 @@ Order of installation
 
 1. zsh installation and restore
 ./install-zsh.sh
+./zsh/install-plugins.sh
 ./zsh/backup-zsh.sh restore
 A logout is required after running this script.
 
@@ -28,6 +29,6 @@ It needs to be activated in tweaks
 
 Scripts that don't require any particular order
 ./install-vimix-cursors.sh
-./gnome-keybindings/keybindings.sh
+./gnome-keybindings/keybindings.sh restore
 ./tmux/tmux-config-backup.sh restore
 ./swap-esc-caps.sh

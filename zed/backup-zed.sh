@@ -21,11 +21,7 @@ backup_zed() {
 restore_zed() {
     echo "Restoring zed configuration..."
 
-    # Check if the backup files exist
-    if [ ! -f "$ZED_BACKUP_DIR/settings.json" ] || [ ! -f "$ZED_BACKUP_DIR/keymap.json" ] || [ ! -f "$ZED_BACKUP_DIR/tasks.json" ]; then
-        echo "Error: Backup files not found. Please ensure backup exists."
-        exit 1
-    fi
+    mkdir -p ~/.config/zed
 
     # Restore zed files
     cp -v "$ZED_BACKUP_DIR/settings.json" ~/.config/zed/settings.json

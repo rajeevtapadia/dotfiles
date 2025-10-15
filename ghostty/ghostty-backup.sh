@@ -12,10 +12,7 @@ backup_ghostty() {
 
 restore_ghostty() {
     echo "Restoring Ghostty configuration..."
-    if [ ! -f "$BACKUP_DIR/config" ]; then
-        echo "Error: Backup file not found."
-        exit 1
-    fi
+    mkdir -p $CONFIG_DIR
     cp -v "$BACKUP_DIR/config" "$CONFIG_DIR/config"
     echo "Ghostty restore complete."
 }

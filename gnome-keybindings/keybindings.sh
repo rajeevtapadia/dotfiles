@@ -18,9 +18,9 @@ fi
 if [[ $1 == 'restore' ]]; then
   dconf reset -f '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/'
   dconf reset -f '/org/gnome/desktop/wm/keybindings/'
-  dconf load '/org/gnome/desktop/wm/keybindings/' < gnome3-keybind-backup/keybindings.dconf
-  dconf load '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/' < gnome3-keybind-backup/custom-values.dconf
-  dconf write '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings' "$(cat gnome3-keybind-backup/custom-keys.dconf)"
+  dconf load '/org/gnome/desktop/wm/keybindings/' < ./gnome-keybindings/gnome3-keybind-backup/keybindings.dconf
+  dconf load '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/' < ./gnome-keybindings/gnome3-keybind-backup/custom-values.dconf
+  dconf write '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings' "$(cat ./gnome-keybindings/gnome3-keybind-backup/custom-keys.dconf)"
   echo "restore done"
   exit 0
 fi
