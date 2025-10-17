@@ -38,6 +38,10 @@ zapzap \
 ghostty \
 fzf \
 pipx \
+fd \
+clangd \
 akmod-nvidia -y
+
+sudo npm i neovim typescript-language-server
 
 ./install-docker-fedora.sh

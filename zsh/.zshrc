@@ -107,15 +107,20 @@ alias gitc="git commit -s"
 alias gits="git status"
 alias gitp="git push"
 alias gitl="git log --oneline"
+alias gitd="git diff"
 alias nrd="npm run dev"
 alias nrt="npx jest"
 alias zed="zed-editor"
 alias attach="tmux attach -t"
 alias xsel="xsel --clipboard"
 
-PROMPT='%F{green}%T%f %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$ '
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# source /home/rajeevt/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:git:*' formats 'git:%b'
+precmd() { vcs_info }  # Run vcs_info before every prompt
+
+# PROMPT='%F{green}%T%f %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$ '
+PROMPT='%F{green}%T%f %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f $ '
 
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
@@ -128,7 +133,6 @@ export DRI_PRIME=1
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export CC="ccache gcc"
 export HOSTCC="ccache gcc"
