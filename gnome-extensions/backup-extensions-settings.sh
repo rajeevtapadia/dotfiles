@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Location to store the backup
-BACKUP_FILE="gnome-extensions-backup.conf"
+BACKUP_FILE="./gnome-extensions/gnome-extensions-backup.conf"
 
 case "$1" in
     backup)

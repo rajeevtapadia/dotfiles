@@ -18,7 +18,7 @@ print_in_green "Setting up repos"
 
 sudo dnf config-manager addrepo --from-repofile=https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
 sudo curl https://copr.fedorainfracloud.org/coprs/rafatosta/zapzap/repo/fedora-42/rafatosta-zapzap-fedora-42.repo > /etc/yum.repos.d/zapzap.repo
-dnf copr enable scottames/ghostty
+sudo dnf copr enable wezfurlong/wezterm-nightly
 
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 
@@ -35,11 +35,12 @@ kde-connect \
 nvtop \
 brave-browser \
 zapzap \
-ghostty \
 fzf \
 pipx \
 fd \
 clangd \
+wezterm \
+nautilus-python \   # for wezterm integration
 akmod-nvidia -y
 
 sudo npm i neovim typescript-language-server
