@@ -17,8 +17,8 @@ Run this with superuser privilate
 4. restore nvim config
 ./neovim/nvim_backup.sh restore
 
-5. ghostty
-./ghostty/ghostty-backup.sh restore
+5. wezterm
+./wezterm/wezterm-backup.sh restore
 
 6. install gnome extensions
 ./gnome-extensions/backup-extensions.sh restore

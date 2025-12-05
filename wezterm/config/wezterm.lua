@@ -91,5 +91,8 @@ config.keys = {
   {key="y", mods="CTRL", action=wezterm.action{CopyTo="Clipboard"}},
 }
 
+-- config.window_decorations = "INTEGRATED_BUTTONS"
+config.hide_tab_bar_if_only_one_tab = true
+
 return config
 

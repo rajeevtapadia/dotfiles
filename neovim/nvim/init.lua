@@ -20,19 +20,20 @@ vim.g.mapleader = " "
 vim.keymap.set('n', '<leader>w', ':write<CR>')
 vim.keymap.set('n', '<leader>a', 'ggVG')
 
---[[
--- pack available from neovim 0.12
-vim.pack.add({
-  "https://github.com/vague2k/vague.nvim",
-})
+-- yank/paste to/from global registers
+vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y')
+vim.keymap.set({ 'n', 'v' }, '<leader>p', '"+p')
 
-require("vague").setup({
-    -- optional configuration here
-})
-
-vim.cmd("colorscheme vague")
-]] --
-
+-- quick fix list
+vim.keymap.set('n', '<leader>j', '<cmd>cnext<CR>')
+vim.keymap.set('n', '<leader>k', '<cmd>cprev<CR>')
+vim.keymap.set('n', '<leader>q', function()
+    if vim.fn.getqflist({ winid = 0 }).winid ~= 0 then
+        vim.cmd('cclose')
+    else
+        vim.cmd('copen')
+    end
+end, { desc = "Toggle quickfix list" })
 
 vim.diagnostic.config({
     virtual_text = true,      -- show inline messages
@@ -69,3 +70,30 @@ vim.api.nvim_create_autocmd("LspAttach", {
         end, opts)
     end,
 })
+
+vim.api.nvim_create_autocmd('TextYankPost', {
+    desc = 'Highlight when yanking (copying) text',
+    group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+    callback = function()
+        vim.highlight.on_yank()
+    end,
+})
+
+-- =========================
+-- :Make - synchronous, uses :make
+-- =========================
+vim.api.nvim_create_user_command("Make", function(opts)
+    local args = opts.args or ""
+    -- run :make (use silent to avoid cluttering commandline)
+    -- remove silent if you prefer to see the shell output inline
+    vim.cmd("silent make " .. args)
+
+    -- if quickfix has entries, open and jump to first
+    local qfl = vim.fn.getqflist()
+    if #qfl > 0 then
+        vim.cmd("copen")
+        vim.cmd("cc 1")
+    else
+        vim.notify("Build succeeded (no quickfix entries).", vim.log.levels.INFO)
+    end
+end, { nargs = "*", complete = "customlist,v:lua._make_complete" })

@@ -21,7 +21,7 @@ sudo dnf remove docker \
 
 print_in_green "Adding docker repo"
 sudo dnf -y install dnf-plugins-core
-sudo dnf-3 config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+curl -fsSL https://download.docker.com/linux/fedora/docker-ce.repo | sudo tee /etc/yum.repos.d/docker-ce.repo >/dev/null
 
 print_in_green "Installing docker"
 sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
@@ -37,4 +37,4 @@ sudo docker run hello-world
 print_in_green "To create docker group run: "
 print_in_green "newgrp docker"
 print_in_green "sudo usermod -aG docker $USER"
-# https://stackoverflow.com/questions/48957195/how-to-fix-docker-permission-denied
+print_in_green "See more: https://stackoverflow.com/questions/48957195/how-to-fix-docker-permission-denied"

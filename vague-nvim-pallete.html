@@ -1,0 +1,67 @@
+<body>
+<div id="root">
+</div>
+</body>
+<script>
+    const root = document.getElementById("root")
+    const colors = {
+        bg: "#141415",
+        inactiveBg: "#1c1c24",
+        fg: "#cdcdcd",
+        floatBorder: "#878787",
+        line: "#252530",
+        comment: "#606079",
+        builtin: "#b4d4cf",
+        func: "#c48282",
+        string: "#e8b589",
+        number: "#e0a363",
+        property: "#c3c3d5",
+        constant: "#aeaed1",
+        parameter: "#bb9dbd",
+        visual: "#333738",
+        error: "#d8647e",
+        warning: "#f3be7c",
+        hint: "#7e98e8",
+        operator: "#90a0b5",
+        keyword: "#6e94b2",
+        type: "#9bb4bc",
+        search: "#405065",
+        plus: "#7fa563",
+        delta: "#f3be7c",
+    }
+    function hexToRgb(hex) {
+        const clean = hex.replace("#","")
+        const r = parseInt(clean.substring(0,2), 16)
+        const g = parseInt(clean.substring(2,4), 16)
+        const b = parseInt(clean.substring(4,6), 16)
+        return `rgb(${r}, ${g}, ${b})`
+    }
+    for(const key in colors) {
+        const div = document.createElement("div")
+        div.style.backgroundColor = colors[key]
+        const rgb = hexToRgb(colors[key])
+        div.innerText = key + ": " + colors[key] + "\n" + rgb
+        root.appendChild(div)
+        console.log(key, colors[key])
+    }
+</script>
+<style>
+body {
+    background-color: #141415;
+}
+#root {
+    text-align: "center";
+    display: flex;
+    flex-wrap: wrap
+}
+#root > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 300px;
+    font-size: 28px;
+    color: white;
+    text-align: center;
+}
+</style>
