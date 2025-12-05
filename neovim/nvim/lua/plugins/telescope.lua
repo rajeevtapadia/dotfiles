@@ -4,6 +4,19 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
         local builtin = require("telescope.builtin")
+        local telescope = require('telescope')
+        telescope.setup {
+            pickers = {
+                find_files = {
+                    hidden = true
+                }
+            },
+            defaults = {
+                file_ignore_patterns = { "%.git/" },
+            },
+        }
+
+
         -- VSCode-like Ctrl+P
         vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = "Find files" })
         -- live grep like Ctrl+Shift+F
