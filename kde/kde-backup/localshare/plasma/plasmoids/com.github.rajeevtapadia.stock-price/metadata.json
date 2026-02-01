@@ -1,0 +1,23 @@
+{
+  "KPackageStructure": "Plasma/Applet",
+  "KPlugin": {
+    "Id": "com.github.rajeevtapadia.stock-price",
+    "Name": "Stock Price",
+    "Description": "Show price of a stock on your Plasma panel",
+    "Version": "0.1.0",
+    "License": "GPL-2.0-or-later",
+    "Authors": [
+      {
+        "Name": "Rajeev Tapadia"
+      }
+    ],
+    "Category": "Online Services",
+    "Dependencies": [],
+    "EnabledByDefault": true,
+    "ServiceTypes": [
+      "Plasma/Applet"
+    ]
+  },
+  "X-Plasma-API-Minimum-Version": "6.0"
+}
+

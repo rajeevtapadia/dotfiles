@@ -1,0 +1,23 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "qinvvv & ff"
+            }
+        ],
+        "Name": "Q-Todo",
+        "Id": "ff.qtodo.widget",
+        "Description": "Customized TodoLists widget from Q-Todo",
+        "Category": "Utilities",
+        "Icon": "checkbox",
+        "EnabledByDefault": true,
+        "License": "GPL-3.0+",
+        "ServiceTypes": [
+            "Plasma/Applet"
+        ],
+        "Version": "1",
+        "Website": "https://github.com/fightingff/qtodo/tree/customized"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0",
+    "X-Plasma-MainScript": "ui/main.qml"
+}

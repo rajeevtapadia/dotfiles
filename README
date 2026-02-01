@@ -20,8 +20,10 @@ Run this with superuser privilate
 5. wezterm
 ./wezterm/wezterm-backup.sh restore
 
-6. install gnome extensions
-./gnome-extensions/backup-extensions.sh restore
+6. restore kde config
+cd kde
+./kde-backup.sh restore
+cd -
 
 7. install whitesur theme
 ./install-whitesur-theme.sh
@@ -29,6 +31,5 @@ It needs to be activated in tweaks
 
 Scripts that don't require any particular order
 ./install-vimix-cursors.sh
-./gnome-keybindings/keybindings.sh restore
 ./tmux/tmux-config-backup.sh restore
 ./swap-esc-caps.sh

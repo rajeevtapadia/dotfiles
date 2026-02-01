@@ -1,0 +1,20 @@
+MenuBar=Disabled
+
+[General]
+ConfirmClosingMultipleTabs=false
+DoubleClickViewAction=none
+EditableUrl=true
+RememberOpenedTabs=false
+ShowFullPath=true
+Version=202
+ViewPropsTimestamp=2025,12,14,10,52,11.085
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[MainWindow]
+MenuBar=Disabled
+
+[PreviewSettings]
+Plugins=audiothumbnail,blenderthumbnail,evince,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,gnome-epub-thumbnailer,exrthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,gsf-office,gnome-mobi-thumbnailer,mobithumbnail,opendocumentthumbnail,gsthumbnail,rawthumbnail,svgthumbnail,gnome-font-viewer,ffmpegthumbs

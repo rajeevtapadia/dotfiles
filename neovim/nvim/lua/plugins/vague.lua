@@ -8,6 +8,7 @@ return {
     {
         "folke/tokyonight.nvim",
     },
+    { 'datsfilipe/vesper.nvim' },
     {
         "vague2k/vague.nvim",
         config = function()

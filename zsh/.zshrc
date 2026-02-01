@@ -128,7 +128,6 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
 export PATH=$PATH:$HOME/.local/zed.app/libexec:
 export PATH=$PATH:$HOME/.jdks/openjdk-22.0.2/bin:
-export DRI_PRIME=1
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

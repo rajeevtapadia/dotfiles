@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE documentInfo>
+<documentInfo url="/home/homelab/Downloads/Project_Hail_Mary.epub">
+ <generalInfo>
+  <history>
+   <oldPage viewport="10;C2:0.5:0.0481928:1"/>
+   <oldPage viewport="9;C2:0.5:0.0430293:1"/>
+   <oldPage viewport="8;C2:0.5:0.0378657:1"/>
+   <oldPage viewport="7;C2:0.5:0.0327022:1"/>
+   <oldPage viewport="6;C2:0.5:0.0266781:1"/>
+   <oldPage viewport="5;C2:0.5:0.0215146:1"/>
+   <oldPage viewport="4;C2:0.5:0.0163511:1"/>
+   <oldPage viewport="3;C2:0.5:0.0111876:1"/>
+   <oldPage viewport="2;C2:0.5:0.344234:1"/>
+   <oldPage viewport="1;C2:0.5:0.000860585:1"/>
+   <current viewport="8;C2:0.5:0.854561:1"/>
+  </history>
+  <views>
+   <view name="PageView">
+    <zoom mode="0" value="1.45266"/>
+    <continuous mode="1"/>
+    <viewMode mode="0"/>
+    <trimMargins value="0"/>
+   </view>
+  </views>
+ </generalInfo>
+</documentInfo>
