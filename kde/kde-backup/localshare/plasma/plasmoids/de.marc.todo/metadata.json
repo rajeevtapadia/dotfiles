@@ -1,0 +1,22 @@
+{
+	"KPlugin": {
+		"Id": "de.marc.todo",
+		"Name": "Marc ToDo",
+		"Name[de]": "Marc ToDo",
+		"Description": "Native ToDo list for KDE Plasma 6",
+		"Description[de]": "Native ToDo-Liste für KDE Plasma 6",
+		"Version": "0.1.3",
+		"Category": "Productivity",
+		"Icon": "view-task",
+		"Authors": [
+			{
+				"Name": "Marc"
+			}
+		]
+	},
+
+	"X-Plasma-API": "declarativeappletscript",
+	"X-Plasma-API-Minimum-Version": "6.0",
+	"X-Plasma-MainScript": "ui/main.qml",
+	"KPackageStructure": "Plasma/Applet"
+}

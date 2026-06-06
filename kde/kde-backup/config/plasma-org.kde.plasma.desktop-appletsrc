@@ -15,8 +15,14 @@ location=0
 plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
+[Containments][1][General]
+changedPositions={"desktop:/alsa_midi_signal.sh":["2560x1440","0","0"],"desktop:/c4_octave_alsa_signal.sh":["2560x1440","0","1"],"desktop:/inline-gotcha.c":["2560x1440","0","2"],"desktop:/test.c":["2560x1440","0","3"]}
+lastResolution=2560x1440
+positions={"2560x1440":["1","23","desktop:/test.c","0","3","desktop:/alsa_midi_signal.sh","0","0","desktop:/inline-gotcha.c","0","2","desktop:/c4_octave_alsa_signal.sh","0","1"]}
+sortMode=-1
+
 [Containments][1][Wallpaper][org.kde.image][General]
-Image=/home/homelab/Pictures/wallpaper/wallpaperflare.com_wallpaper.jpg
+Image=file:///home/homelab/Pictures/wallpaper/wallpaperflare.com_wallpaper.jpg
 SlidePaths=/usr/share/wallpapers/
 
 [Containments][2]
@@ -33,7 +39,6 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][2][Applets][15][Configuration]
-PreloadWeight=100
 popupHeight=451
 popupWidth=560
 
@@ -59,7 +64,6 @@ plugin=org.kde.plasma.systemmonitor
 
 [Containments][2][Applets][55][Configuration]
 CurrentPreset=org.kde.plasma.systemmonitor
-PreloadWeight=100
 popupHeight=156
 popupWidth=308
 
@@ -124,18 +128,6 @@ plugin=org.kde.plasma.marginsseparator
 DialogHeight=630
 DialogWidth=810
 
-[Containments][2][Applets][66]
-immutability=1
-plugin=com.github.rajeevtapadia.stock-price
-
-[Containments][2][Applets][66][Configuration]
-popupHeight=91
-popupWidth=178
-
-[Containments][2][Applets][66][Configuration][ConfigDialog]
-DialogHeight=630
-DialogWidth=810
-
 [Containments][2][Applets][67]
 immutability=1
 plugin=org.kde.plasma.marginsseparator
@@ -143,6 +135,18 @@ plugin=org.kde.plasma.marginsseparator
 [Containments][2][Applets][68]
 immutability=1
 plugin=org.kde.plasma.marginsseparator
+
+[Containments][2][Applets][69]
+immutability=1
+plugin=org.kde.netspeedWidget
+
+[Containments][2][Applets][69][Configuration][ConfigDialog]
+DialogHeight=630
+DialogWidth=810
+
+[Containments][2][Applets][69][Configuration][General]
+fontSize=70
+showSeparately=false
 
 [Containments][2][Applets][7]
 activityId=
@@ -167,22 +171,13 @@ plugin=org.kde.plasma.keyboardlayout
 immutability=1
 plugin=org.kde.plasma.devicenotifier
 
-[Containments][2][Applets][7][Applets][12][Configuration]
-PreloadWeight=100
-
 [Containments][2][Applets][7][Applets][13]
 immutability=1
 plugin=org.kde.plasma.notifications
 
-[Containments][2][Applets][7][Applets][13][Configuration]
-PreloadWeight=85
-
 [Containments][2][Applets][7][Applets][14]
 immutability=1
 plugin=org.kde.plasma.volume
-
-[Containments][2][Applets][7][Applets][14][Configuration]
-PreloadWeight=100
 
 [Containments][2][Applets][7][Applets][14][Configuration][General]
 migrated=true
@@ -191,22 +186,13 @@ migrated=true
 immutability=1
 plugin=org.kde.kdeconnect
 
-[Containments][2][Applets][7][Applets][17][Configuration]
-PreloadWeight=100
-
 [Containments][2][Applets][7][Applets][18]
 immutability=1
 plugin=org.kde.plasma.battery
 
-[Containments][2][Applets][7][Applets][18][Configuration]
-PreloadWeight=75
-
 [Containments][2][Applets][7][Applets][19]
 immutability=1
 plugin=org.kde.plasma.networkmanagement
-
-[Containments][2][Applets][7][Applets][19][Configuration]
-PreloadWeight=100
 
 [Containments][2][Applets][7][Applets][19][Configuration][General]
 currentDetailsTab=details
@@ -227,29 +213,21 @@ plugin=org.kde.plasma.weather
 immutability=1
 plugin=org.kde.kscreen
 
-[Containments][2][Applets][7][Applets][23][Configuration]
-PreloadWeight=55
-
 [Containments][2][Applets][7][Applets][24]
 immutability=1
 plugin=org.kde.plasma.mediacontroller
-
-[Containments][2][Applets][7][Applets][24][Configuration]
-PreloadWeight=0
 
 [Containments][2][Applets][7][Applets][52]
 immutability=1
 plugin=org.kde.plasma.vault
 
-[Containments][2][Applets][7][Applets][52][Configuration]
-PreloadWeight=55
-
 [Containments][2][Applets][7][Applets][53]
 immutability=1
 plugin=org.kde.plasma.brightness
 
-[Containments][2][Applets][7][Applets][53][Configuration]
-PreloadWeight=100
+[Containments][2][Applets][7][Applets][71]
+immutability=1
+plugin=org.kde.plasma.bluetooth
 
 [Containments][2][Applets][7][Applets][8]
 immutability=1
@@ -259,21 +237,42 @@ plugin=org.kde.plasma.cameraindicator
 immutability=1
 plugin=org.kde.plasma.clipboard
 
-[Containments][2][Applets][7][Applets][9][Configuration]
-PreloadWeight=85
-
 [Containments][2][Applets][7][ConfigDialog]
 DialogHeight=630
 DialogWidth=810
 
 [Containments][2][Applets][7][General]
-extraItems=org.kde.plasma.cameraindicator,org.kde.plasma.manage-inputmethod,org.kde.plasma.keyboardlayout,org.kde.plasma.brightness,org.kde.plasma.devicenotifier,org.kde.plasma.mediacontroller,org.kde.plasma.notifications,org.kde.plasma.volume,org.kde.kdeconnect,org.kde.plasma.vault,org.kde.plasma.bluetooth,org.kde.plasma.networkmanagement,org.kde.plasma.printmanager,org.kde.plasma.keyboardindicator,org.kde.plasma.weather,org.kde.kscreen,org.kde.plasma.clipboard,org.kde.plasma.battery
+disabledStatusNotifiers=chrome_status_icon_1
+extraItems=org.kde.plasma.cameraindicator,org.kde.plasma.manage-inputmethod,org.kde.plasma.keyboardlayout,org.kde.plasma.brightness,org.kde.plasma.devicenotifier,org.kde.plasma.mediacontroller,org.kde.plasma.notifications,org.kde.plasma.volume,org.kde.kdeconnect,org.kde.plasma.vault,org.kde.plasma.networkmanagement,org.kde.plasma.printmanager,org.kde.plasma.keyboardindicator,org.kde.plasma.weather,org.kde.kscreen,org.kde.plasma.clipboard,org.kde.plasma.battery,org.kde.plasma.bluetooth
 hiddenItems=ZapZap,qBittorrent,org.kde.plasma.battery
 knownItems=org.kde.plasma.cameraindicator,org.kde.plasma.clipboard,org.kde.plasma.manage-inputmethod,org.kde.plasma.keyboardlayout,org.kde.plasma.battery,org.kde.plasma.brightness,org.kde.plasma.devicenotifier,org.kde.plasma.mediacontroller,org.kde.plasma.notifications,org.kde.plasma.volume,org.kde.kdeconnect,org.kde.plasma.vault,org.kde.plasma.bluetooth,org.kde.plasma.networkmanagement,org.kde.plasma.printmanager,org.kde.plasma.keyboardindicator,org.kde.plasma.weather,org.kde.kscreen
-shownItems=org.kde.plasma.clipboard
+shownItems=org.kde.plasma.clipboard,org.kde.plasma.bluetooth
+
+[Containments][2][Applets][74]
+immutability=1
+plugin=com.github.rajeevtapadia.stock-price
+
+[Containments][2][Applets][74][Configuration]
+popupHeight=113
+popupWidth=560
+
+[Containments][2][Applets][78]
+immutability=1
+plugin=de.marc.todo
+
+[Containments][2][Applets][78][Configuration]
+popupHeight=440
+popupWidth=300
+
+[Containments][2][Applets][78][Configuration][ConfigDialog]
+DialogHeight=630
+DialogWidth=810
+
+[Containments][2][Applets][78][Configuration][General]
+tasksJson=[{"title":"Python LC","done":false,"priority":1,"category":"Private","createdAt":"2026-04-08T11:21:06.744Z","dueDate":""},{"title":"The Art of Spending Money","done":false,"priority":1,"category":"Private","createdAt":"2026-04-06T13:46:41.321Z","dueDate":""},{"title":"TFIDF in rag-c","done":false,"priority":1,"category":"Private","createdAt":"2026-03-22T05:42:18.405Z","dueDate":""},{"title":"Plumber-grindr","done":false,"priority":1,"category":"Private","createdAt":"2026-03-22T04:34:20.896Z","dueDate":""},{"title":"CUDA","done":false,"priority":1,"category":"Private","createdAt":"2026-03-22T04:34:09.304Z","dueDate":""}]
 
 [Containments][2][General]
-AppletOrder=6;66;67;68;56;54;15;48;55;7
+AppletOrder=6;74;67;68;56;54;15;48;69;55;78;7
 
 [Containments][25]
 activityId=
@@ -289,8 +288,7 @@ immutability=1
 plugin=org.kde.plasma.kickoff
 
 [Containments][25][Applets][26][Configuration]
-PreloadWeight=100
-popupHeight=509
+popupHeight=513
 popupWidth=647
 
 [Containments][25][Applets][26][Configuration][ConfigDialog]
@@ -321,4 +319,4 @@ AppletOrder=26;27;28
 
 [ScreenMapping]
 itemsOnDisabledScreens=
-screenMapping=desktop:/test.c,0,733b1ac6-94dd-407b-9baa-966c27872133,desktop:/c4_octave_alsa_signal.sh,0,733b1ac6-94dd-407b-9baa-966c27872133,desktop:/alsa_midi_signal.sh,0,733b1ac6-94dd-407b-9baa-966c27872133
+screenMapping=desktop:/alsa_midi_signal.sh,0,733b1ac6-94dd-407b-9baa-966c27872133,desktop:/c4_octave_alsa_signal.sh,0,733b1ac6-94dd-407b-9baa-966c27872133,desktop:/inline-gotcha.c,0,733b1ac6-94dd-407b-9baa-966c27872133,desktop:/test.c,0,733b1ac6-94dd-407b-9baa-966c27872133

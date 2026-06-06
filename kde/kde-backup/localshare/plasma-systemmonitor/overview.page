@@ -11,6 +11,18 @@ network/wlp18s0f0u6u3/download=96,96,121
 network/wlp18s0f0u6u3/ipv4address=121,121,96
 network/wlp18s0f0u6u3/ipv6address=96,121,109
 network/wlp18s0f0u6u3/upload=121,96,109
+network/wlp42s0f3u4i2/download=96,96,121
+network/wlp42s0f3u4i2/ipv4address=121,121,96
+network/wlp42s0f3u4i2/ipv6address=96,121,109
+network/wlp42s0f3u4i2/upload=121,96,109
+network/wlp42s0f3u4u1i2/download=96,96,121
+network/wlp42s0f3u4u1i2/ipv4address=121,121,96
+network/wlp42s0f3u4u1i2/ipv6address=96,121,109
+network/wlp42s0f3u4u1i2/upload=121,96,109
+network/wlp42s0f4u1i2/download=96,96,121
+network/wlp42s0f4u1i2/ipv4address=121,121,96
+network/wlp42s0f4u1i2/ipv6address=96,121,109
+network/wlp42s0f4u1i2/upload=121,96,109
 
 [Face-101427258480848][Sensors]
 highPrioritySensorIds=["network/(?!all).*/download","network/(?!all).*/upload","network/(?!all).*/ipv4address","network/(?!all).*/ipv6address"]
@@ -67,6 +79,7 @@ chartFace=org.kde.ksysguard.horizontalbars
 
 [Face-106123488899456][SensorColors]
 disk/36d649c1-9df2-41e6-9d2c-1be9097554eb/used=88,233,61
+disk/3e20-4e4b/used=121,121,96
 disk/47e965be-eea3-4c8d-9e91-31d5c968d104/used=233,120,61
 disk/a8a05b84-40f2-4e7c-a5a9-910e985b6fb0/used=206,61,233
 disk/def8a1b0f8a186fd/used=61,174,233

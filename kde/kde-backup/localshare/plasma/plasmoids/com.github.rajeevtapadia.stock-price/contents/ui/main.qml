@@ -14,11 +14,12 @@ PlasmoidItem {
     property string priceText: "—"
     property string diffText: ""
     property color diffColor: "white"
-
-    readonly property int refreshMs: refreshMinutes * 60 * 1000
+    property string lastError: ""
+    property bool isFetching: false
+    property int retryAttempt: 0
+    readonly property int maxRetries: 3
 
     compactRepresentation: Item {
-        // Explicit size + layout hints so the panel reserves space
         implicitWidth: priceRow.implicitWidth + 12
         implicitHeight: priceRow.implicitHeight + 12
         Layout.minimumWidth: implicitWidth
@@ -32,7 +33,6 @@ PlasmoidItem {
             spacing: 6
 
             Label {
-                id: priceLabel
                 text: priceText
                 font.bold: false
                 font.pointSize: 11
@@ -40,7 +40,6 @@ PlasmoidItem {
             }
 
             Label {
-                id: diffLabel
                 text: diffText
                 font.bold: false
                 font.pointSize: 8
@@ -71,9 +70,19 @@ PlasmoidItem {
             }
         }
 
+        Label {
+            visible: lastError.length > 0
+            text: "⚠ " + lastError
+            font.pointSize: 8
+            color: "#f59e0b"
+            wrapMode: Text.WordWrap
+            Layout.fillWidth: true
+        }
+
         Button {
             text: "Refresh"
-            onClicked: refresh()
+            enabled: !isFetching
+            onClicked: startFetch()
         }
 
         Label {
@@ -83,37 +92,68 @@ PlasmoidItem {
         }
     }
 
-    Component.onCompleted: refresh()
+    Component.onCompleted: startFetch()
 
     Timer {
         id: refreshTimer
-        interval: refreshMs
+        interval: refreshMinutes * 60 * 1000
         running: true
         repeat: true
-        onTriggered: refresh()
+        onTriggered: startFetch()
     }
 
-    function refresh() {
-        PriceApi.getPrice(symbol)
-            .then(function (data) {
-                priceText = data.latest_price.toString()
-                diffText = data.diff_percent.toFixed(2) + "%"
-                diffColor = data.diff > 0
-                    ? "#22c55e"
-                    : data.diff < 0
-                        ? "#ef4444"
-                        : "#cbd5e1"
-            })
-            .catch(function (err) {
-                priceText = "Err"
-                diffText = ""
-                diffColor = "orange"
-                console.log("Stock widget error: " + err)
-            })
+    Timer {
+        id: retryTimer
+        repeat: false
+        onTriggered: doFetch()
     }
 
     onRefreshMinutesChanged: {
-        refreshTimer.interval = refreshMs
+        refreshTimer.interval = refreshMinutes * 60 * 1000
         refreshTimer.restart()
+    }
+
+    function startFetch() {
+        if (isFetching) return
+        retryAttempt = 0
+        lastError = ""
+        isFetching = true
+        doFetch()
+    }
+
+    function doFetch() {
+        var attempt = retryAttempt + 1
+        console.log("[StockWidget] Fetching " + symbol + " (attempt " + attempt + "/" + maxRetries + ")")
+
+        PriceApi.fetchPrice(
+            symbol,
+            function (data) {
+                isFetching = false
+                retryAttempt = 0
+                lastError = ""
+                priceText = data.latest_price.toString()
+                diffText = data.diff_percent.toFixed(2) + "%"
+                diffColor = data.diff > 0 ? "#22c55e" : data.diff < 0 ? "#ef4444" : "#cbd5e1"
+                console.log("[StockWidget] OK — " + symbol + " = " + data.latest_price)
+            },
+            function (errMsg) {
+                console.log("[StockWidget] Attempt " + attempt + " failed: " + errMsg)
+                lastError = errMsg
+
+                if (retryAttempt < maxRetries - 1) {
+                    retryAttempt++
+                    var delay = 2000 * Math.pow(2, retryAttempt - 1)
+                    console.log("[StockWidget] Retrying in " + delay + "ms")
+                    retryTimer.interval = delay
+                    retryTimer.start()
+                } else {
+                    isFetching = false
+                    if (priceText === "—") priceText = "Err"
+                    diffText = ""
+                    diffColor = "orange"
+                    console.log("[StockWidget] All attempts failed: " + errMsg)
+                }
+            }
+        )
     }
 }

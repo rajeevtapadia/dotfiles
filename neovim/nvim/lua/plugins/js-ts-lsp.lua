@@ -1,16 +1,23 @@
-vim.lsp.config("tsserver", {
+vim.lsp.config("ts_ls", {
     cmd = { "typescript-language-server", "--stdio" },
     filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
+    root_markers = { "package.json", "tsconfig.json", ".git" },
+
     settings = {
-        tsserver = {
-            disableAutomaticTypeAcquisition = false,
-            diagnostics = { enable = true },
-            suggest = { autoImports = true },
+        typescript = {
+            suggest = {
+                autoImports = true,
+            },
+        },
+        javascript = {
+            suggest = {
+                autoImports = true,
+            },
         },
     },
 })
 
 -- Enable TypeScript server
-vim.lsp.enable({ "tsserver" })
+vim.lsp.enable({ "ts_ls" })
 
 return {}

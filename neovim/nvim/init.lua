@@ -7,6 +7,7 @@ vim.opt.wrap = false
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
@@ -23,6 +24,19 @@ vim.keymap.set('n', '<leader>a', 'ggVG')
 -- yank/paste to/from global registers
 vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y')
 vim.keymap.set({ 'n', 'v' }, '<leader>p', '"+p')
+
+-- adjust indent in visual mode
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
+
+-- Clear search highlighting
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+
+-- Insert mode navigation
+vim.keymap.set("i", "<M-h>", "<Left>", { desc = "Move left" })
+vim.keymap.set("i", "<M-j>", "<Down>", { desc = "Move down" })
+vim.keymap.set("i", "<M-k>", "<Up>", { desc = "Move up" })
+vim.keymap.set("i", "<M-l>", "<Right>", { desc = "Move right" })
 
 -- quick fix list
 vim.keymap.set('n', '<leader>j', '<cmd>cnext<CR>')
@@ -63,6 +77,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
         vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
         vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+        vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 
         -- Autoformat files with Alt+Shift+F
         vim.keymap.set("n", "<M-F>", function()
@@ -97,3 +112,31 @@ vim.api.nvim_create_user_command("Make", function(opts)
         vim.notify("Build succeeded (no quickfix entries).", vim.log.levels.INFO)
     end
 end, { nargs = "*", complete = "customlist,v:lua._make_complete" })
+
+vim.api.nvim_create_user_command("GCC", function(opts)
+    vim.cmd("write")
+
+    local file = vim.fn.expand("%")
+    local output = vim.fn.expand("%:r")
+    local args = opts.args or ""
+
+    local cmd = "gcc -g " .. file .. " -o " .. output .. " " .. args
+
+    local result = vim.fn.systemlist(cmd)
+    local success = vim.v.shell_error == 0
+
+    if not success then
+        vim.fn.setqflist({}, " ", {
+            title = "GCC",
+            lines = result,
+            efm = "%f:%l:%c: %t%*[^:]: %m",
+        })
+
+        vim.cmd("copen")
+        vim.cmd("cc 1")
+    else
+        vim.cmd("cclose")
+        vim.notify("Build succeeded. Running " .. output, vim.log.levels.INFO)
+        vim.cmd("!" .. "./" .. output)
+    end
+end, { nargs = "*" })

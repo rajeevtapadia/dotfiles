@@ -133,11 +133,12 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [General]
+ColorScheme=Vague
 ColorSchemeHash=830618334e80145940aecfe14fddda232f3508b6
 LastUsedCustomAccentColor=146,110,228
 XftAntialias=true
-XftHintStyle=hintslight
-XftSubPixel=rgb
+XftHintStyle=hintfull
+XftSubPixel=none
 font=Roboto,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 menuFont=Roboto,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 smallestReadableFont=Roboto,8,-1,5,400,0,0,0,0,0,0,0,0,0,0,1

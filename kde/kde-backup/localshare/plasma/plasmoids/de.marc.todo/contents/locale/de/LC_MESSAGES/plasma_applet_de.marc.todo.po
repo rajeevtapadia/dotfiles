@@ -1,0 +1,62 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
+
+msgid "High"
+msgstr "Hoch"
+
+msgid "Medium"
+msgstr "Mittel"
+
+msgid "Low"
+msgstr "Gering"
+
+msgid "Due date"
+msgstr "Fälligkeit"
+
+msgid "Today"
+msgstr "Heute"
+
+msgid "Tomorrow"
+msgstr "Morgen"
+
+msgid "Custom date"
+msgstr "Benutzerdefiniertes Datum"
+
+msgid "Delete date"
+msgstr "Datum löschen"
+
+msgid "Delete"
+msgstr "Löschen"
+
+msgid "Choose date"
+msgstr "Datum wählen"
+
+msgid "Day:"
+msgstr "Tag:"
+
+msgid "Month:"
+msgstr "Monat:"
+
+msgid "Year:"
+msgstr "Jahr:"
+
+msgid "My Tasks"
+msgstr "Meine Aufgaben"
+
+msgid "New task..."
+msgstr "Neue Aufgabe..."
+
+msgid "%1 tasks"
+msgstr "%1 Aufgaben"
+
+msgid "Delete completed"
+msgstr "Erledigte löschen"
+
+msgid "Rename"
+msgstr "Umbenennen"
+
+msgid "Priority"
+msgstr "Priorität"
